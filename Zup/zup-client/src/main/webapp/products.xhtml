@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:p="http://primefaces.org/ui">
+        <form jsf:id="formNotaFiscal" jsf:prependId="false">
+            <div class="container-fluid">
+                <div class="row">
+                    <ui:include src="include/products/listProducts.xhtml" />
+                </div>
+            </div>
+        </form>
+    
+        <div class="modal modal-wide fade" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close-zup" onclick="closeModal('myModal');">x</button>
+                        <h5 class="modal-title">Produtos - Novo / Editar</h5>
+                    </div>
+                    <div class="modal-body">
+                        <ui:include src="include/products/editProduct.xhtml"/>
+                    </div>
+                    <div class="modal-footer">
+                        <p:commandButton class="btn btn-default" onstart="ajaxStart()" 
+                                         actionListener="#{productsBean.fechar()}"
+                                         oncomplete="closeModal('myModal'); ajaxStop();" value="Fechar" />
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+</html>

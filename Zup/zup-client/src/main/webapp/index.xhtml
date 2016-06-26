@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head jsf:id="head">
+        <title>Zup Client</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="stylesheet" href="bootstrap3/css/bootstrap-theme.css" type="text/css"/>
+        <link rel="stylesheet" href="bootstrap3/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="bootstrap3/css/bootstrap-select.css" type="text/css"/>
+        <link rel="stylesheet" href="bootstrap3/css/estilos.css" type="text/css"/>
+    </head>
+    <body jsf:id="body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-sm-12">
+                    <ui:insert name="content">
+                        <ui:include src="products.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-sm-12">
+                    <ui:insert name="modal"></ui:insert>
+                </div>
+            </div>
+        </div>
+        <div class="loader"></div>
+        
+        <script src="bootstrap3/jquery/dist/jquery.js"></script>
+        <script src="bootstrap3/js/bootstrap.min.js"></script>
+        <script src="bootstrap3/js/bootstrap-select.min.js"></script>
+        <script>jQuery.noConflict();</script>
+        <script src="bootstrap3/js/index.js"></script>
+
+        <script>
+            jQuery.support.transition = false;
+        </script>
+    </body>
+</html>

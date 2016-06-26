@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <form jsf:id="formListProducts" jsf:prependId="false">
+        <div class="container-fluid">
+            <h4><span class="label label-pill label-info">Produtos</span></h4>
+            <div class="table-responsive no-padding">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-sm-12 no-padding">
+                        <h:dataTable class="table table-striped table-bordered table-hover"
+                                     id="productsDataTable"
+                                     value="#{productsBean.listProducts}"
+                                     var="products">
+                            <h:column>
+                                <f:facet name="header">
+                                    <p:commandLink value="Novo" onstart="ajaxStart()" actionListener="#{productsBean.novoProduto()}"
+                                                   oncomplete="openModal('myModal'); ajaxStop();"></p:commandLink>
+                                </f:facet>
+                                <p:commandLink value="Editar" actionListener="#{productsBean.editProduct(products.id)}" onstart="ajaxStart()"
+                                                   oncomplete="openModal('myModal'); ajaxStop();"></p:commandLink>
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">ID</f:facet>
+                                <label>#{products.id}</label>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Nome</f:facet>
+                                <label>#{products.name}</label>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Categoria</f:facet>
+                                <label>#{products.category}</label>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Descrição</f:facet>
+                                <label>#{products.description}</label>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Preço</f:facet>
+                                <label>#{products.price}</label>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value=""/>
+                                </f:facet>
+                                <p:commandLink value="Remover" actionListener="#{productsBean.remover(products.id)}" onstart="ajaxStart()"
+                                                   oncomplete="ajaxStop();"></p:commandLink>
+                            </h:column>
+                            
+                        </h:dataTable>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h:panelGroup layout="block" id="msg">
+                        <h4><span class="label label-pill label-warning" style="float: right;">#{productsBean.msg}</span></h4>
+                    </h:panelGroup>
+                </div>
+            </div>
+        </div>
+    </form>
+</html>

@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06/06/2016, 09:29:45
+    Author     : mateusgobo
+*/
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    2147483647;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+body.loading {
+    overflow: hidden;   
+}
+body.loading .loader {
+    display: block;
+}
+
+div{
+    font-size: 11px;
+    font-family: Arial;
+}
+
+span {
+    font-size: 12px;
+}
+
+a{
+    font-size: 12px;
+}
+
+li a {
+    font-size: 12px;
+}
+
+thead tr th{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+tbody tr td label{
+    font-size: 11px;
+    font-weight: normal;
+}
+
+select option{
+    height: 100px;
+}

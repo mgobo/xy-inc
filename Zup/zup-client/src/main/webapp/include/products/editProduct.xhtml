@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <form jsf:id="formEditProduct" jsf:prependId="false">
+        <div class="container-fluid">
+            <div class="container-fluid"><!--full width, alignment and padding-->
+                <div class="row">
+                    <div class="col-sm-10 col-md-10 no-padding">
+                        <p:commandButton class="btn btn-primary" value="Salvar" actionListener="#{productsBean.salvar()}" onstart="ajaxStart()" 
+                                                                 oncomplete="closeModal('myModal'); ajaxStop(); "/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 no-padding">
+                        <label>Nome</label><br/>
+                        <input type="text" jsf:value="#{productsBean.products.name}" style="width: 100%;"/>
+                    </div>
+                    <div class="col-sm-3 col-md-3 no-padding">
+                        <label>Categoria</label><br/>
+                        <input type="text" jsf:value="#{productsBean.products.category}" style="width: 100%;"/>
+                    </div>
+                    <div class="col-sm-3 col-md-3 no-padding">
+                        <label>Preço</label><br/>
+                        <input type="text" jsf:value="#{productsBean.price}" style="width: 100%;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 no-padding">
+                        <label>Descricao</label><br/>
+                        <textarea style="width: 100%;" jsf:value="#{productsBean.products.description}"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</html>
