@@ -8,7 +8,7 @@ package com.zup.br.bean;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zup.br.client.ProductsRS;
 import com.zup.br.commons.FacesUtil;
-import com.zup.br.domain.Products;
+import com.zup.br.pojo.Products;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;

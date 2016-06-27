@@ -28,11 +28,6 @@
             <groupId>org.glassfish.jersey.containers</groupId> 
             <artifactId>jersey-container-servlet</artifactId> 
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>zup-ejb</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency> 
             <groupId>com.fasterxml.jackson.jaxrs</groupId> 
             <artifactId>jackson-jaxrs-json-provider</artifactId> 
