@@ -55,6 +55,13 @@ IMPLANTAR A APLICACAO "zup-service";
 IMPLANTAR A APLICACAO "zup-client";
 
 Acessar zup-client no navegador;
-Acessar zup-service no navegador (Teste dos verbos HTTP)
+Acessar zup-service no navegador (Teste dos verbos HTTP);
+
+
+#TESTES UNITARIOS;
+Acessar o projeto "zup-ejb";
+Abrir o arquivo "pom.xml";
+Alterar a linha de "<skipTests>true</skipTests>" para "<skipTests>false</skipTests>"
+Limpar e construir o projeto. Durante o processo de "build" os testes unitários serão executados;
 
 
