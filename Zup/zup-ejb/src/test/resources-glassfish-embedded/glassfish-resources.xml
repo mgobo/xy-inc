@@ -10,6 +10,6 @@
                           datasource-classname="org.apache.derby.jdbc.EmbeddedDataSource"
                           is-isolation-level-guaranteed="false">
         <property name="databaseName" value="target/databases/zup"/>
-<!--        <property name="createDatabase" value="create"/>-->
+        <property name="createDatabase" value="create"/>
     </jdbc-connection-pool>
 </resources>
