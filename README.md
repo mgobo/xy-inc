@@ -25,16 +25,16 @@ A solução foi desenvolvida utilizando EJB, inversão de controle ATIVO (CDI) com 
 O EJB foi escolhido pois possui uma camada consistente e segura para o gerenciamento dos dados através de JTA (Java Transaction API). O JAX-RS é a api Java para Rest e possui inúmeros facilitadores para construção de serviços REST. 
 
 #PROJETO
-A idéia principal neste ponto é delegar ao container a responsabilidade de gerenciar da melhor forma possível as transações realizadas entre APLICACAO-BANCO. Além disto, as classes são organizadas de forma única e utilizam inversão de controle com um mecanismo próprio de persistência, gerenciado pelo container.
+A idéia principal neste ponto é delegar ao container a responsabilidade de gerenciar da melhor forma possível as transações realizadas entre APLICACAO-BANCO. Além disto, as classes são organizadas de forma única e utilizam inversão de controle com um mecanismo próprio de persistência, gerenciado pelo container.
 Criteria 2 garante que todas as consultas sejam realizadas utilizando 100% de objetos mapeados, minimizando em 100% falhas na escrita de comandos JPQL.
 O jackson é utilizado para conversão de objetos Java-Json, Json-Java.
 O Layout é responsivo e utiliza Bootstrap, o JSF com primefaces é utilizado apenas para gerenciar alguns eventos do Front-End.
-O banco utilizado  o derby, pois se trata de uma solu‹o embarcada do Java.
-Log4j entra para gerar "logs" de opera›es específicas que auxiliam o desenvolvedor no entendimento e resolução de problemas.
-O Arquillian e o JUNIT s‹o os framework de teste respons‡veis por validar a camanda de negócios;
+O banco utilizado é o derby, pois se trata de uma solução embarcada do Java.
+Log4j entra para gerar "logs" de operações específicas que auxiliam o desenvolvedor no entendimento e resolução de problemas.
+O Arquillian e o JUNIT são os framework de teste responsáveis por validar a camanda de negócios;
 
 #RODANDO O PROJETO
-O projeto foi testado no GLASSFISH, release 4.1. A 4.1.1 possui um erro e não é possível registrar o "Pool de conex›es JDBC". É possível utilizar o GLASSFISH-5 beta ou qualquer outro servidor como WILDFLY.
+O projeto foi testado no GLASSFISH, release 4.1. A 4.1.1 possui um erro e não é possível registrar o "Pool de conexões JDBC". É possível utilizar o GLASSFISH-5 beta ou qualquer outro servidor como WILDFLY.
 
 
 --CRIANDO O BANCO
@@ -43,7 +43,7 @@ EM WINDOWS, EXECUTAR: ij.bat
 EM UNIX, DAR PERMISSAO FULL NO DIRETORIO "javadb" e EXECUTAR: ./ij
 CRIAR O BANCO ZUP no derby executando o comando como SUPER USUARIO: CONNECT 'jdbc:derby:zup;user=zup;password=zup;create=true';
 
---Registrar o JDBC Connection Pool no servidor de aplica›es:
+--Registrar o JDBC Connection Pool no servidor de aplicações:
 Nome do pool: zup (Pool Name)
 Nome da jndi: jdbc/__zup (Fonte de dados JTA).
 
