@@ -105,7 +105,11 @@ public class ProductsResource extends CommonsResponseRS{
         return response;
     }
     
-    
+    /**
+     * DELETE method for remove an instance of ProductsResource
+     * @param id
+     * @return 
+     */
     @DELETE
     @Path("products/{id}")
     @Consumes(MediaType.APPLICATION_JSON)

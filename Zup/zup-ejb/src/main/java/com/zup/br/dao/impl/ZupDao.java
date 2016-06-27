@@ -5,8 +5,6 @@
  */
 package com.zup.br.dao.impl;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.HeuristicMixedException;
@@ -19,6 +17,7 @@ import com.zup.br.dao.api.IZupDao;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -26,6 +25,8 @@ import javax.persistence.criteria.Root;
  */
 public class ZupDao implements IZupDao {
 
+    private final Logger logger = Logger.getLogger(ZupDao.class);
+    
     private @Inject EntityManager em;
     private @Inject UserTransaction utx;
 
@@ -67,15 +68,15 @@ public class ZupDao implements IZupDao {
         try {
             this.utx.commit();
         } catch (RollbackException | HeuristicMixedException | HeuristicRollbackException | SecurityException | IllegalStateException | SystemException ex) {
-            Logger.getLogger(ZupDao.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("FALHA NO COMMIT, ERRO => "+ex);
         }
     }
 
     private void rollback() {
         try {
             this.utx.rollback();
-        } catch (IllegalStateException | SecurityException | SystemException ex1) {
-            Logger.getLogger(ZupDao.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (IllegalStateException | SecurityException | SystemException ex) {
+            logger.error("FALHA NO ROLLBACK, ERRO => "+ex);
         }
     }
 
